@@ -1,28 +1,46 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="grey"
+      dark
+    >
+      <div class="d-flex align-center">
+        <h1><i>my</i>DAY</h1>
+      </div>
+      
+  
+    </v-app-bar>
+
+    <div id="tabs">
+       <v-tabs  color="grey">
+          <v-tab>NEWS</v-tab>
+          <v-tab>CALLENDER</v-tab>
+          <v-tab>TODO</v-tab>
+
+       </v-tabs>
+    </div>
+    
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
+
   components: {
-    HelloWorld
-  }
-}
+    
+  },
+
+  data: () => ({
+    //
+  }),
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+#tabs {
+  margin : 70px 0px 0px 20px;
 }
 </style>
