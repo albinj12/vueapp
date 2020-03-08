@@ -13,12 +13,16 @@
     </v-app-bar>
 
     <div id="tabs">
-       <v-tabs  color="grey">
-          <v-tab>NEWS</v-tab>
-          <v-tab>CALLENDER</v-tab>
-          <v-tab>TODO</v-tab>
+       <v-tabs v-model="tab" color="grey">
+          <v-tab v-for="item in items" :key="item">{{ item }}</v-tab>
+          
 
        </v-tabs>
+       <v-tabs-items v-model="tab">
+       <v-tab-item v-for="item in items" :key="item"> 
+       {{ item }}
+       </v-tab-item>
+       </v-tabs-items>
     </div>
     
   </v-app>
@@ -28,15 +32,15 @@
 
 export default {
   name: 'App',
-
-  components: {
-    
-  },
-
-  data: () => ({
-    //
-  }),
-};
+  data () {
+      return {
+        tab: null,
+        items: [
+          'News', 'Events', 'To-Do'
+        ],
+      }
+    }
+}
 </script>
 
 <style scoped>
