@@ -14,32 +14,43 @@
 
     <div id="tabs">
        <v-tabs v-model="tab" color="grey">
-          <v-tab v-for="item in items" :key="item">{{ item }}</v-tab>
-          
-
+          <v-tab>NEWS</v-tab>
+          <v-tab>EVENTS</v-tab>
+          <v-tab>TO-DO</v-tab>
        </v-tabs>
        <v-tabs-items v-model="tab">
-       <v-tab-item v-for="item in items" :key="item"> 
-       {{ item }}
-       </v-tab-item>
+         <v-tab-item>
+           <news></news>
+         </v-tab-item>
+         <v-tab-item>
+           <events></events>
+         </v-tab-item>
+         <v-tab-item>
+           <todo></todo>
+         </v-tab-item>
        </v-tabs-items>
     </div>
-    
   </v-app>
 </template>
 
 <script>
 
+import todo from './components/todo';
+import news from './components/news';
+import events from './components/events';
+
 export default {
   name: 'App',
+  components: {
+    todo,
+    news,
+    events
+  },
   data () {
       return {
         tab: null,
-        items: [
-          'News', 'Events', 'To-Do'
-        ],
       }
-    }
+    },
 }
 </script>
 
