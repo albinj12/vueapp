@@ -21,7 +21,7 @@ app.use('/todo',todo)
 
 // Home Route
 app.get('/', (req, res) =>{
-    res.send("Server working properly");
+    console.log('Home page');
 });
 
 app.listen(8000, () => {
