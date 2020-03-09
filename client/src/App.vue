@@ -55,7 +55,7 @@ export default {
 </script>
 
 <style scoped>
-#tabs {
-  margin : 70px 0px 0px 20px;
+.v-tabs {
+  margin : 70px 10px 10px;
 }
 </style>
