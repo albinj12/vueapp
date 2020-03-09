@@ -30,6 +30,7 @@
          </v-tab-item>
        </v-tabs-items>
     </div>
+    <h1>{{ info }}</h1>
   </v-app>
 </template>
 
@@ -38,6 +39,7 @@
 import todo from './components/todo';
 import news from './components/news';
 import events from './components/events';
+import axios from 'axios';
 
 export default {
   name: 'App',
@@ -49,9 +51,15 @@ export default {
   data () {
       return {
         tab: null,
+        info: null,
       }
     },
-}
+  created() {
+    axios.get('http://localhost:8000')
+    .then((response) => (this.info = response.data))
+    .catch(error => console.log(error))
+  } 
+};
 </script>
 
 <style scoped>
