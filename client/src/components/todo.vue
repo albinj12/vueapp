@@ -7,19 +7,45 @@
             </v-text-field>
         </v-col>
         </div>
+        <div class="text-center">
+            <v-snackbar
+            v-model="snackbar"
+            :timeout="timeout"
+            :color="color"
+            :top = true
+            >
+            {{ text }}
+            </v-snackbar>
+        </div>
     </v-app>
 </template>
 
 <script>
+
+import axios from 'axios';
+
 export default {
     data: () => ({
         newTodo: '',
+        snackbar: false,
+        text: '',
+        timeout: 2000,
+        color: ''
     }),
     methods: {
         addTodo() {
-            console.log(this.newTodo);
+            axios.post('http://localhost:8000/todo/add',{
+                todo: this.newTodo
+            }).then((response) => {
+                if(response.data === 'Todo added'){
+                    this.color = 'green'
+                }else{
+                    this.color = 'red'
+                }
+                this.text = response.data;
+                this.snackbar = true})
         }
-    }
+    },
 }
 </script>
 
