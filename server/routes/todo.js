@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-let todoModel = require('../models/todo');
+let todoModel = require('../models/todomodel');
 
 // Routes
 
@@ -68,7 +68,7 @@ router
     .route('/:id')
     .delete((req, res) => {
         let query = { _id: req.params.id }
-        todoModel.remove(query, (err) => {
+        todoModel.deleteOne(query, (err) => {
             if(err){
                 res.send("Error while deleting todo")
             }else{

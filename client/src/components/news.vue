@@ -1,3 +1,3 @@
 <template>
-    <h1>News</h1>
+    <h1>NEWS</h1>
 </template>
