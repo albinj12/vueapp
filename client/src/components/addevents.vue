@@ -29,7 +29,6 @@
                     v-model="eventTitle" 
                     label="Event Title" 
                     required
-                    :rules="titleRules"
                 ></v-text-field>
             </v-col>
             
@@ -42,7 +41,6 @@
                     auto-grow
                     row-height="25"
                     required
-                    :rules="DescRules"
                 ></v-textarea>
             </v-col>
 
@@ -96,12 +94,6 @@ import axios from 'axios'
         return {
             dialog: false,
             eventTitle: '',
-            titleRules: [
-            v => !!v || 'Name is required',
-            ],
-            DescRules: [
-            v => !!v || 'Description is required',
-            ],
             eventDes: '',
             eventLoc: '',
             eventdate: new Date().toISOString().substr(0, 10),
@@ -116,7 +108,6 @@ import axios from 'axios'
     },
     methods: {
         addEvent() {
-            this.$refs.form.validate()
             axios.post('http://localhost:8000/events/addevent',{
                 title: this.eventTitle,
                 des: this.eventDes,
@@ -133,6 +124,9 @@ import axios from 'axios'
                 }
                 this.snackbar.text = response.data.message;
                 this.snackbar.value = true;})
+                this.eventTitle= "";
+                this.eventDes= "";
+                this.eventLoc= "";
         },
         cancelEvent() {
             this.dialog = false;
