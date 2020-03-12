@@ -13,7 +13,7 @@
     </v-app-bar>
 
     <div id="tabs">
-       <v-tabs v-model="tab" color="grey">
+       <v-tabs v-model="tab" color="grey" class="d-flex justify-center">
           <v-tab>NEWS</v-tab>
           <v-tab>EVENTS</v-tab>
           <v-tab>TO-DO</v-tab>
