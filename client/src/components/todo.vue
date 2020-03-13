@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <h1 id="addTodo">Add ToDo</h1>
+        <h1 id="addTodo" class="white--text">Add ToDo</h1>
         <!-- todo input field -->
         <div>
             <v-col cols="6" style="margin: 0px auto;">
@@ -46,7 +46,7 @@
         </div>
 
         <!-- completed todos -->
-        <h1 class="text-center">Completed Todos</h1>
+        <h1 class="text-center white--text">Completed Todos</h1>
         <div v-for="todo in completedTodos" :key="todo._id">
             <v-card
                 class="mx-auto"
