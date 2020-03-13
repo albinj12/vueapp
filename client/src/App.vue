@@ -6,7 +6,7 @@
       flat
     >
       <div class="d-flex align-center">
-        <h1 class="white--text"><i>my</i>DAY</h1>
+        <h1 class="white--text"><i>vue</i>APP</h1>
       </div>
       
   
