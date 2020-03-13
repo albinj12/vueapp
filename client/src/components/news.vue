@@ -46,3 +46,10 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.v-btn {
+    background: bottom !important;
+    color: white !important;
+}
+</style>

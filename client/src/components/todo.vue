@@ -4,7 +4,7 @@
         <!-- todo input field -->
         <div>
             <v-col cols="6" style="margin: 0px auto;">
-            <v-text-field v-model="newTodo" label="Add Todo" solo append-icon="add_box" @click:append="addTodo">
+            <v-text-field v-model="newTodo" label="Add Todo" solo append-icon="add_box" @click:append="addTodo" @keyup.enter="addTodo">
             </v-text-field>
         </v-col>
         </div>
@@ -25,11 +25,11 @@
         <div v-for="todo in uncompletedTodos" :key="todo._id">
             <v-card
                 class="mx-auto"
-                color="#26c6da"
+                color="white"
                 dark
                 max-width="800"
             >
-                <v-card-text class="font-weight-bold title" >
+                <v-card-text class="font-weight-bold title blue--text" >
                 {{ todo.title }}
                 <v-list-item id="todo-list-item" class="grow">
                     
@@ -50,11 +50,11 @@
         <div v-for="todo in completedTodos" :key="todo._id">
             <v-card
                 class="mx-auto"
-                color="orange"
+                color="blue"
                 dark
                 max-width="800"
             >
-                <v-card-text class="font-weight-bold title" >
+                <v-card-text class="font-weight-bold title white--text" >
                 {{ todo.title }}
                 <v-list-item id="todo-list-item" class="grow">
                     
