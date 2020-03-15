@@ -58,9 +58,6 @@
                 {{ todo.title }}
                 <v-list-item id="todo-list-item" class="grow">
                     
-                        <v-btn @click="completeTodo(todo._id)" class="mx-2" fab dark small color="green">
-                        <v-icon dark>done</v-icon>
-                        </v-btn>
                         <v-btn @click="deleteTodo(todo._id)" class="mx-2" fab dark small color="red">
                         <v-icon dark>delete_sweep</v-icon>
                         </v-btn>
